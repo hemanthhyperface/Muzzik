@@ -31,7 +31,7 @@ export default function Player() {
     }
 
     const fetchCurrentSong = () => {
-        if (!songInfo) {
+        if (songInfo !== null) {
             spotifyApi.getMyCurrentPlayingTrack().then((data) => {
                 setCurrentTrackId(data.body?.item?.id)
                 spotifyApi.getMyCurrentPlaybackState().then((data) => {
