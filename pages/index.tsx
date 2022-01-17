@@ -12,6 +12,8 @@ const IndexPage = ({ providers }) => {
 
   const { data: session } = useSession();
 
+  console.log(session,'session1');
+
   return <><div className='flex flex-row bg-black'>
     <Sidebar />
     <Main />

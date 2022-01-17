@@ -43,6 +43,7 @@ export default NextAuth({
   callbacks: {
     async jwt({ token, account, user }) {
       if (account && user) {
+        console.log(token,'toek');
         return {
           ...token,
           accessToken: account.access_token,

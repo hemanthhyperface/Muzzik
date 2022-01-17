@@ -20,7 +20,7 @@ export default function Song({ order, track }) {
     function millisToMinutesAndSeconds(millis) {
         var minutes = Math.floor(millis / 60000);
         var seconds = ((millis % 60000) / 1000).toFixed(0);
-        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        return minutes + ":" + (Number(seconds) < 10 ? '0' : '') + seconds;
       }
     return (
         <div className='grid grid-cols-2 text-gray-500 py-4 px-5 hover:bg-gray-900 rounded-lg cursor-pointer' onClick={() =>playSong()}>

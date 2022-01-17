@@ -8,7 +8,7 @@ export default function useSpotify() {
     const { data: session, status } = useSession();
 
     useEffect(() => {
-        console.log(session,'session')
+        console.log(session,'useSpotify');
        if(session){
            if(session.error === 'RefreshAccessTokenError'){
                signIn();
