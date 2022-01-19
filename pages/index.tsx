@@ -11,8 +11,13 @@ import { useSession, signIn, signOut, getSession } from 'next-auth/react';
 const IndexPage = ({ providers }) => {
 
   const { data: session } = useSession();
+  const router = useRouter()
 
   console.log(session,'session1');
+
+  if(session == null){
+    router.push('/api/auth/signin');
+  }
 
   return <><div className='flex flex-row bg-black'>
     <Sidebar />
