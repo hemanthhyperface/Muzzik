@@ -14,10 +14,13 @@ const IndexPage = ({ providers }) => {
   const router = useRouter()
 
   console.log(session,'session1');
-
-  if(session == null){
-    router.push('/api/auth/signin');
-  }
+  useEffect(() => {
+    if(session == null){
+      router.push('/api/auth/signin');
+    }
+  }, []);
+  
+  
 
   return <><div className='flex flex-row bg-black'>
     <Sidebar />
